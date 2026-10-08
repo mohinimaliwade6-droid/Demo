@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BusMitra | Jalgaon Bus Tracking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🚌 <span>BusMitra</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#buses">Buses</a>
+        <a href="#routes">Routes</a>
+        <a href="#talukas">Talukas</a>
+        <a href="#tracking">Tracking</a>
+    </nav>
+
+    <button id="darkBtn">🌙</button>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="small-title">
+            JALGAON DISTRICT BUS INFORMATION SYSTEM
+        </p>
+
+        <h1>
+            Find Your Bus.<br>
+            <span>Reach Your Destination.</span>
+        </h1>
+
+        <p class="hero-text">
+            BusMitra helps passengers find buses, routes,
+            talukas and village information across Jalgaon district.
+        </p>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search bus, route or taluka..."
+            >
+
+            <button onclick="searchBus()">
+                🔍 Search
+            </button>
+
+        </div>
+
+        <div id="searchResult"></div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="card-header">
+            <span>BUSMITRA</span>
+            <span class="active">● DEMO</span>
+        </div>
+
+        <div class="journey">
+
+            <div>
+                📍
+                <small>Chalisgaon</small>
+            </div>
+
+            <div class="journey-line">
+                🚌
+            </div>
+
+            <div>
+                📍
+                <small>Jalgaon</small>
+            </div>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div>
+                <b>15</b>
+                <small>Talukas</small>
+            </div>
+
+            <div>
+                <b>1513</b>
+                <small>Villages</small>
+            </div>
+
+            <div>
+                <b>24×7</b>
+                <small>Access</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="section">
+
+    <div class="heading">
+
+        <p>FEATURES</p>
+
+        <h2>Everything You Need</h2>
+
+        <span>
+            Simple and useful bus information in one place.
+        </span>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">🚌</div>
+
+            <h3>Bus Information</h3>
+
+            <p>
+                Find available buses and important bus details.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">📍</div>
+
+            <h3>Live Tracking</h3>
+
+            <p>
+                Track the current location of a bus.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">🗺️</div>
+
+            <h3>Routes</h3>
+
+            <p>
+                Find routes between different locations.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">🏘️</div>
+
+            <h3>Village Directory</h3>
+
+            <p>
+                Explore villages from Jalgaon district.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BUSES ================= -->
+
+<section class="section dark" id="buses">
+
+    <div class="heading">
+
+        <p>BUS SERVICES</p>
+
+        <h2>Popular Buses</h2>
+
+    </div>
+
+
+    <div class="bus-grid" id="busContainer"></div>
+
+</section>
+
+
+<!-- ================= ROUTES ================= -->
+
+<section class="section" id="routes">
+
+    <div class="heading">
+
+        <p>BUS ROUTES</p>
+
+        <h2>Popular Routes</h2>
+
+    </div>
+
+
+    <div class="route-grid">
+
+        <div class="route">
+            <span>Chalisgaon</span>
+            <b>→</b>
+            <span>Jalgaon</span>
+        </div>
+
+        <div class="route">
+            <span>Bhadgaon</span>
+            <b>→</b>
+            <span>Jalgaon</span>
+        </div>
+
+        <div class="route">
+            <span>Pachora</span>
+            <b>→</b>
+            <span>Chalisgaon</span>
+        </div>
+
+        <div class="route">
+            <span>Amalner</span>
+            <b>→</b>
+            <span>Jalgaon</span>
+        </div>
+
+        <div class="route">
+            <span>Bhusawal</span>
+            <b>→</b>
+            <span>Jalgaon</span>
+        </div>
+
+        <div class="route">
+            <span>Chopda</span>
+            <b>→</b>
+            <span>Jalgaon</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRACKING ================= -->
+
+<section class="section tracking-section" id="tracking">
+
+    <div class="heading">
+
+        <p>LIVE TRACKING</p>
+
+        <h2>Where Is My Bus?</h2>
+
+        <span>
+            Interactive tracking demonstration.
+        </span>
+
+    </div>
+
+
+    <div class="tracking">
+
+        <div class="map">
+
+            <div class="map-title">
+                LIVE MAP • DEMO
+            </div>
+
+            <div class="road road1"></div>
+
+            <div class="road road2"></div>
+
+            <div class="road road3"></div>
+
+            <div class="pin pin1">📍</div>
+
+            <div class="bus-location" id="busLocation">
+                🚌
+            </div>
+
+            <div class="pin pin2">📍</div>
+
+        </div>
+
+
+        <div class="tracking-info">
+
+            <span class="status">
+                ● ON ROUTE
+            </span>
+
+            <h2>JLG-101</h2>
+
+            <p>
+                <b>Route</b>
+                <span>Chalisgaon → Jalgaon</span>
+            </p>
+
+            <p>
+                <b>Current Location</b>
+                <span id="currentLocation">
+                    Chalisgaon Road
+                </span>
+            </p>
+
+            <p>
+                <b>Next Stop</b>
+                <span>Mehunbare</span>
+            </p>
+
+            <button onclick="moveBus()">
+                🚌 Simulate Movement
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TALUKAS ================= -->
+
+<section class="section dark" id="talukas">
+
+    <div class="heading">
+
+        <p>JALGAON DISTRICT</p>
+
+        <h2>Taluka Directory</h2>
+
+        <span>
+            Select a taluka to view its information.
+        </span>
+
+    </div>
+
+
+    <div
+        class="taluka-grid"
+        id="talukaContainer">
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section">
+
+    <div class="about">
+
+        <p>COLLEGE FIELD PROJECT</p>
+
+        <h2>
+            BusMitra – Jalgaon Bus Tracking System
+        </h2>
+
+        <p>
+            BusMitra is a web-based bus information system
+            designed for passengers in Jalgaon district.
+            The system provides bus information, routes,
+            taluka information and tracking demonstration.
+        </p>
+
+
+        <div class="tags">
+
+            <span>✓ Responsive</span>
+            <span>✓ Bus Search</span>
+            <span>✓ Routes</span>
+            <span>✓ Taluka Directory</span>
+            <span>✓ Village Information</span>
+            <span>✓ Dark Mode</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+
+        <h3>🚌 BusMitra</h3>
+
+        <p>
+            Smart Bus Information System
+            for Jalgaon District
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <p>
+            College Field Project © 2026
+        </p>
+
+        <a
+            href="https://jalgaon.gov.in/en/villages/"
+            target="_blank">
+
+            Official Jalgaon Village Directory ↗
+
+        </a>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeModal()">
+
+            ×
+
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
